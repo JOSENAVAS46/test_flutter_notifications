@@ -40,6 +40,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas en tu
     REACT_APP_FCM_API_URL=https://fcm.googleapis.com/v1/projects/
 
 ## Scripts Disponibles
+
     En el directorio del proyecto, puedes ejecutar los siguientes comandos:
 
     ### npm start
