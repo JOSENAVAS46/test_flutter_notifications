@@ -56,7 +56,7 @@ const App = () => {
 
   const getFirebaseToken = async () => {
     try {
-      const data = await axiosRequest('get', 'http://192.168.0.51:6008/api/getfcmbt');
+      const data = await axiosRequest('get', 'http://apifirebasecm.birobid2.com/api/getfcmbt');
       const token = data.token;
       return token;
     } catch (error) {
