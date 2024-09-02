@@ -56,7 +56,7 @@ const App = () => {
 
   const getFirebaseToken = async () => {
     try {
-      const data = await axiosRequest('get', process.env.REACT_APP_FIREBASE_API_URL);
+      const data = await axiosRequest('get', 'http://192.168.0.51:6008/api/getfcmbt');
       const token = data.token;
       return token;
     } catch (error) {
@@ -66,7 +66,7 @@ const App = () => {
 
   const getChoferTokens = async (choferId) => {
     try {
-      const data = await axiosRequest('get', `${process.env.REACT_APP_CHOFER_TOKENS_URL}${choferId}`);
+      const data = await axiosRequest('get', `https://apioperaciones.birobid2.com/token?chofer=${choferId}`);
       return data.map(item => item.token);
     } catch (error) {
       console.error('Error fetching chofer tokens:', error);
@@ -75,7 +75,7 @@ const App = () => {
 
   const sendNotification = async (firebaseToken, notificationPayload, appName) => {
     try {
-      await axiosRequest('post', `${process.env.REACT_APP_FCM_API_URL}${appName}/messages:send`, notificationPayload, {
+      await axiosRequest('post', `https://fcm.googleapis.com/v1/projects/${appName}/messages:send`, notificationPayload, {
         Authorization: `Bearer ${firebaseToken}`
       });
     } catch (error) {
