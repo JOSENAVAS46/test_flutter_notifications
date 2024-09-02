@@ -38,7 +38,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas en tu
 
 4. **Configura tus variables de entorno:**
 
-   Crea un archivo .env en la raíz del proyecto y añade las siguientes variables de entorno. Usa el archivo .env.example como referencia:
+   Crea un archivo .env en la carpeta `./src` del proyecto y añade las siguientes variables de entorno. Usa el archivo `./src/.env.example` como referencia:
 
    ```bash
     REACT_APP_FIREBASE_API_URL=http://example.com/api/getfcmbt
